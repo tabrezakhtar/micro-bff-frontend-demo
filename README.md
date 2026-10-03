@@ -24,6 +24,8 @@ docker-compose up --build
 
 ## 🚀 Quick Start (Local, without Docker)
 
+> **Windows only** — the start/stop scripts are PowerShell (`.ps1`), invoked via `npm start`/`npm stop`.
+
 From the repo root:
 
 ```powershell
