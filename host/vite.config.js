@@ -8,7 +8,7 @@ export default defineConfig({
     federation({
       name: 'host_app',
       remotes: {
-        'menu-mfe': 'http://localhost:5174/dist/remoteEntry.js'
+        'menu-mfe': 'http://localhost:5174/remoteEntry.js'
       },
       shared: {
         react: {
@@ -23,6 +23,13 @@ export default defineConfig({
     })
   ],
   server: {
+    port: 5173,
+    cors: {
+      origin: '*',
+      credentials: true
+    }
+  },
+  preview: {
     port: 5173,
     cors: {
       origin: '*',

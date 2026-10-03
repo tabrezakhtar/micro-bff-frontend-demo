@@ -30,9 +30,17 @@ export default defineConfig({
       credentials: true
     }
   },
+  preview: {
+    port: 5174,
+    cors: {
+      origin: ['http://localhost:5173', 'http://localhost:3000'],
+      credentials: true
+    }
+  },
   build: {
     target: 'esnext',
     minify: false,
-    cssCodeSplit: false
+    cssCodeSplit: false,
+    assetsDir: ''
   }
 });
