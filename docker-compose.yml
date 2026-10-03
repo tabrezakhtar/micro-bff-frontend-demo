@@ -1,0 +1,51 @@
+services:
+  restaurant-api:
+    build:
+      context: ./restaurant-api
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - app-network
+
+  web-bff:
+    build:
+      context: ./web-bff
+    ports:
+      - "3000:3000"
+    environment:
+      - RESTAURANT_API_URL=http://restaurant-api:4000
+      - CORS_ORIGINS=http://localhost:5174,http://localhost:5173,http://127.0.0.1:5174,http://127.0.0.1:5173
+    depends_on:
+      - restaurant-api
+    networks:
+      - app-network
+
+  menu-mfe:
+    build:
+      context: ./menu-mfe
+    ports:
+      - "5174:5174"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - web-bff
+    networks:
+      - app-network
+
+  host:
+    build:
+      context: ./host
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - menu-mfe
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

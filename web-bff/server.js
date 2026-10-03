@@ -4,11 +4,12 @@ import axios from 'axios';
 
 const app = express();
 const PORT = 3000;
-const RESTAURANT_API_URL = 'http://localhost:4000';
+const RESTAURANT_API_URL = process.env.RESTAURANT_API_URL || 'http://localhost:4000';
+const CORS_ORIGINS = (process.env.CORS_ORIGINS || 'http://localhost:5174,http://localhost:5173').split(',');
 
 // Enable CORS for Menu MFE and Host
 app.use(cors({
-  origin: ['http://localhost:5174', 'http://localhost:5173'],
+  origin: CORS_ORIGINS,
   credentials: true
 }));
 

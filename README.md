@@ -26,7 +26,27 @@ To stop all services:
 npm stop
 ```
 
-## 📊 Architecture
+## � Docker Setup
+
+Alternatively, run all services in Docker with docker-compose:
+
+```bash
+docker-compose up
+```
+
+Then open **http://localhost:5173** in your browser.
+
+To stop:
+```bash
+docker-compose down
+```
+
+To rebuild after code changes:
+```bash
+docker-compose up --build
+```
+
+## �📊 Architecture
 
 ```
 Browser → Host App (5173)
