@@ -1,6 +1,6 @@
-# Food Ordering Micro Frontend & BFF Learning Project
+# Food Ordering Micro Frontend & BFF Demo Project
 
-Learning project demonstrating **Module Federation** (micro frontends) and **Backend-for-Frontend (BFF)** pattern.
+Demo project demonstrating **Module Federation** (micro frontends) and **Backend-for-Frontend (BFF)** pattern.
 
 ## 🐳 Quick Start (Docker — recommended)
 
