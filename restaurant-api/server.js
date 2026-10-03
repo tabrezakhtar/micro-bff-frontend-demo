@@ -16,7 +16,7 @@ app.use(express.json());
 const menuData = [
   {
     id: 1,
-    name: "Margherita Pizza 123",
+    name: "Margherita Pizza",
     description: "Tomato, mozzarella and basil",
     price: 10.50,
     category: "Pizza",
