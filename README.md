@@ -2,7 +2,27 @@
 
 Learning project demonstrating **Module Federation** (micro frontends) and **Backend-for-Frontend (BFF)** pattern.
 
-## 🚀 Quick Start
+## 🐳 Quick Start (Docker — recommended)
+
+From the repo root:
+
+```bash
+docker-compose up --build
+```
+
+Then open **http://localhost:5173** in your browser.
+
+To stop:
+```bash
+docker-compose down
+```
+
+To rebuild after code changes:
+```bash
+docker-compose up --build
+```
+
+## 🚀 Quick Start (Local, without Docker)
 
 From the repo root:
 
@@ -26,27 +46,7 @@ To stop all services:
 npm stop
 ```
 
-## � Docker Setup
-
-Alternatively, run all services in Docker with docker-compose:
-
-```bash
-docker-compose up
-```
-
-Then open **http://localhost:5173** in your browser.
-
-To stop:
-```bash
-docker-compose down
-```
-
-To rebuild after code changes:
-```bash
-docker-compose up --build
-```
-
-## �📊 Architecture
+## 📊 Architecture
 
 ```
 Browser → Host App (5173)
