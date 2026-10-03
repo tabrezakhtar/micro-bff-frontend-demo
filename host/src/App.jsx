@@ -7,7 +7,7 @@ export default function App() {
   return (
     <div style={styles.container}>
       <header style={styles.header}>
-        <h1 style={styles.heading}>🍕 Food Ordering</h1>
+        <h1 style={styles.heading}> Food Ordering</h1>
         <p style={styles.subtitle}>Powered by Micro Frontend Architecture</p>
       </header>
 

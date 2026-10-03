@@ -99,6 +99,6 @@ app.get('/health', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🍕 Restaurant API running on http://localhost:${PORT}`);
-  console.log(`📋 Menu endpoint: http://localhost:${PORT}/restaurants/1/menu`);
+  console.log(` Restaurant API running on http://localhost:${PORT}`);
+  console.log(` Menu endpoint: http://localhost:${PORT}/restaurants/1/menu`);
 });

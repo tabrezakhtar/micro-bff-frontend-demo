@@ -57,7 +57,7 @@ app.get('/health', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🍽️  Web BFF running on http://localhost:${PORT}`);
-  console.log(`📡 Menu endpoint: http://localhost:${PORT}/api/menu`);
-  console.log(`📍 Connects to Restaurant API at ${RESTAURANT_API_URL}`);
+  console.log(`  Web BFF running on http://localhost:${PORT}`);
+  console.log(` Menu endpoint: http://localhost:${PORT}/api/menu`);
+  console.log(` Connects to Restaurant API at ${RESTAURANT_API_URL}`);
 });

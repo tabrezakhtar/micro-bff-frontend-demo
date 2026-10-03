@@ -2,7 +2,7 @@
 
 Demo project demonstrating **Module Federation** (micro frontends) and **Backend-for-Frontend (BFF)** pattern.
 
-## 🐳 Quick Start (Docker — recommended)
+##  Quick Start (Docker — recommended)
 
 From the repo root:
 
@@ -22,7 +22,7 @@ To rebuild after code changes:
 docker-compose up --build
 ```
 
-## 🚀 Quick Start (Local, without Docker)
+##  Quick Start (Local, without Docker)
 
 > **Windows only** — the start/stop scripts are PowerShell (`.ps1`), invoked via `npm start`/`npm stop`.
 
@@ -48,7 +48,7 @@ To stop all services:
 npm stop
 ```
 
-## 📊 Architecture
+##  Architecture
 
 ```
 Browser → Host App (5173)
@@ -60,7 +60,7 @@ Browser → Host App (5173)
          Restaurant API (4000) [raw menu data]
 ```
 
-## 🔍 What Each Service Does
+##  What Each Service Does
 
 | Service | Port | Purpose |
 |---------|------|---------|
@@ -76,7 +76,7 @@ Browser → Host App (5173)
 4. BFF fetches from restaurant-api at 4000 and transforms the data
 5. Menu renders with formatted prices (£10.50) and camelCase fields (isAvailable)
 
-## 🔑 Key Patterns Demonstrated
+##  Key Patterns Demonstrated
 
 **Module Federation**: Host loads Menu MFE at runtime via `remoteEntry.js` manifest (see `host/vite.config.js` line 11).
 
