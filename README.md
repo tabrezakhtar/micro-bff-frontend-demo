@@ -2,7 +2,7 @@
 
 Demo project demonstrating **Module Federation** (micro frontends) and **Backend-for-Frontend (BFF)** pattern.
 
-##  Quick Start (Docker — recommended)
+## Quick Start (Docker - recommended)
 
 From the repo root:
 
@@ -12,19 +12,23 @@ docker-compose up --build
 
 Then open **http://localhost:5173** in your browser.
 
+Code changes are reflected automatically without rebuilding:
+- `restaurant-api` / `web-bff`: nodemon restarts on file save
+- `menu-mfe` / `host`: Vite rebuilds in watch mode on file save (browser refresh needed)
+
 To stop:
 ```bash
 docker-compose down
 ```
 
-To rebuild after code changes:
+If you only want the plain production images (no live-reload), run:
 ```bash
-docker-compose up --build
+docker-compose -f docker-compose.yml up --build
 ```
 
-##  Quick Start (Local, without Docker)
+## Quick Start (Local, without Docker)
 
-> **Windows only** — the start/stop scripts are PowerShell (`.ps1`), invoked via `npm start`/`npm stop`.
+> **Windows only** - the start/stop scripts are PowerShell (`.ps1`), invoked via `npm start`/`npm stop`.
 
 From the repo root:
 
@@ -48,19 +52,22 @@ To stop all services:
 npm stop
 ```
 
-##  Architecture
+## Architecture
 
 ```
-Browser → Host App (5173)
-           ↓
+Browser -> Host App (5173)
+           |
+           v
          Menu MFE (5174) [loaded at runtime via Module Federation]
-           ↓
+           |
+           v
          Web BFF (3000) [transforms data]
-           ↓
+           |
+           v
          Restaurant API (4000) [raw menu data]
 ```
 
-##  What Each Service Does
+## What Each Service Does
 
 | Service | Port | Purpose |
 |---------|------|---------|
@@ -74,10 +81,10 @@ Browser → Host App (5173)
 2. Host fetches menu-mfe's `remoteEntry.js` from 5174 (Module Federation manifest)
 3. Menu component loads and calls BFF at 3000
 4. BFF fetches from restaurant-api at 4000 and transforms the data
-5. Menu renders with formatted prices (£10.50) and camelCase fields (isAvailable)
+5. Menu renders with formatted prices ($10.50) and camelCase fields (isAvailable)
 
-##  Key Patterns Demonstrated
+## Key Patterns Demonstrated
 
 **Module Federation**: Host loads Menu MFE at runtime via `remoteEntry.js` manifest (see `host/vite.config.js` line 11).
 
-**BFF Pattern**: Backend returns raw data (e.g., `available: true, price: 10.50`), BFF transforms for web (e.g., `isAvailable: true, price: "£10.50"`).
+**BFF Pattern**: Backend returns raw data (e.g., `available: true, price: 10.50`), BFF transforms for web (e.g., `isAvailable: true, price: "$10.50"`).

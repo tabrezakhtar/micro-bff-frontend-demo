@@ -16,7 +16,7 @@ app.use(express.json());
 const menuData = [
   {
     id: 1,
-    name: "Margherita Pizza",
+    name: "Margherita Pizza 123",
     description: "Tomato, mozzarella and basil",
     price: 10.50,
     category: "Pizza",
@@ -99,6 +99,6 @@ app.get('/health', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(` Restaurant API running on http://localhost:${PORT}`);
-  console.log(` Menu endpoint: http://localhost:${PORT}/restaurants/1/menu`);
+  console.log(`Restaurant API running on http://localhost:${PORT}`);
+  console.log(`Menu endpoint: http://localhost:${PORT}/restaurants/1/menu`);
 });

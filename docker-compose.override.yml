@@ -1,0 +1,36 @@
+services:
+  restaurant-api:
+    command: ["npm", "run", "dev"]
+    volumes:
+      - ./restaurant-api/server.js:/app/server.js
+      - ./restaurant-api/package.json:/app/package.json
+    environment:
+      - NODE_ENV=development
+
+  web-bff:
+    command: ["npm", "run", "dev"]
+    volumes:
+      - ./web-bff/server.js:/app/server.js
+      - ./web-bff/package.json:/app/package.json
+    environment:
+      - NODE_ENV=development
+
+  menu-mfe:
+    command: ["npm", "run", "dev:docker"]
+    volumes:
+      - ./menu-mfe/src:/app/src
+      - ./menu-mfe/index.html:/app/index.html
+      - ./menu-mfe/vite.config.js:/app/vite.config.js
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+
+  host:
+    command: ["npm", "run", "dev:docker"]
+    volumes:
+      - ./host/src:/app/src
+      - ./host/index.html:/app/index.html
+      - ./host/vite.config.js:/app/vite.config.js
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true

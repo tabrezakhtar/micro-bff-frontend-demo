@@ -21,7 +21,7 @@ function transformMenuItem(item) {
     id: item.id,
     name: item.name,
     description: item.description,
-    price: `£${item.price.toFixed(2)}`,
+    price: `$${item.price.toFixed(2)}`,
     category: item.category,
     isAvailable: item.available
     // Note: restaurantId is removed - frontend doesn't need it
@@ -57,7 +57,7 @@ app.get('/health', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`  Web BFF running on http://localhost:${PORT}`);
-  console.log(` Menu endpoint: http://localhost:${PORT}/api/menu`);
-  console.log(` Connects to Restaurant API at ${RESTAURANT_API_URL}`);
+  console.log(`Web BFF running on http://localhost:${PORT}`);
+  console.log(`Menu endpoint: http://localhost:${PORT}/api/menu`);
+  console.log(`Connects to Restaurant API at ${RESTAURANT_API_URL}`);
 });
