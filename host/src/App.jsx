@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react';
 
-// Dynamically import Menu component from Menu MFE
 const Menu = React.lazy(() => import('menu-mfe/Menu'));
 
 export default function App() {
